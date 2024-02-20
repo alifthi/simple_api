@@ -6,10 +6,8 @@ app = Flask(__name__)
 
 device = "cuda" # the device to load the model onto
 
-model = AutoModelForCausalLM.from_pretrained(
-    "Qwen/Qwen1.5-7B-Chat",
-    device_map="auto")
-tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-7B-Chat")                                       
+model = AutoModelForCausalLM.from_pretrained("mistralai/Mixtral-8x7B-v0.1")
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-v0.1")                                 
 
   
 @app.route("/", methods=['POST'])
@@ -18,6 +16,7 @@ def receive_json():
         return jsonify({"error": "No JSON data found in request"}), 400
     try:
         messages = request.get_json()
+        
     except Exception as e:
         return jsonify({"error": "Invalid JSON format"}), 400
     
