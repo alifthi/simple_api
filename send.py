@@ -2,7 +2,7 @@ import requests
 import json
 import time 
 headers = {"Content-Type": "application/json"}
-prompt="چطور میتونم سرعت اجرا یه برنامه رو افزایش بدم؟"
+prompt="مسله شناسایی موجودیت های نام دار را برای متن زیر انجام بده \n ساعت تنظیم کن برای 8 صبح"
 messages = {'lang':'persian','is_first_message':True,'message':
 			{"role": "user", "content":prompt}}
 messages=json.dumps(messages)
