@@ -1,7 +1,6 @@
 
 import json
 from fastapi import FastAPI, Request, Response, status
-from transformers import AutoModelForCausalLM, AutoTokenizer
 
 app = FastAPI()
 

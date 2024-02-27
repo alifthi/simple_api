@@ -1,10 +1,14 @@
 import requests
 import json
-import time 
+import time
 headers = {"Content-Type": "application/jsnon"}
 # prompt="Do NER on the following sentence: \nNote: **just say the entities in  [{\'entities\': Names, \'types\': types}] structure** \n set alarm for 8 AM"
-prompt="call Ali"
-prompt=f"Extract the entities of the following sentence **say the entities like a json\n {prompt}"
+prompt="i want to play football"
+# prompt=f"Extract the entities of the following sentence **say the entities like a json\n {prompt}"
+prompt=f'is the following sentence wants some thing in mobile phone? just answer yes ot no \n{prompt}'
+user='hello !'
+system='hello !how can in help you?'
+prompt=f' <|im_start|>{user}<|im_end|> <|im_start|>assistan {user}<|im_end|>'
 messages = {'lang':'persian','is_first_message':True,'message':
 			{"role": "user", "content":prompt}}
 messages=json.dumps(messages)
